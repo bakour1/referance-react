@@ -30,12 +30,11 @@ const router = createBrowserRouter([
           },
           {
             path: ':eventId',
-            id: 'event-detail', //assigning an id, so that any of its children can access the data loaded by Eventdetailsloader
+            id: 'event-detail',
             loader: eventDetailLoader,
             children: [
               {
-                // index: true,
-                path: '',
+                index: true,
                 element: <EventDetailPage />,
                 action: deleteEventAction
               },

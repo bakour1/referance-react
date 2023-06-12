@@ -19,7 +19,7 @@ export async function loader({ request, params }) {
     throw json(
       { message: 'Could not fetch details for selected event.' },
       {
-        status: 500
+        status: 500,
       }
     );
   } else {

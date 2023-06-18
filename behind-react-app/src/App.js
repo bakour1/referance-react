@@ -12,7 +12,7 @@ function App() {
   }, []);
 
   return (
-    <div className='app'>
+    <div className="app">
       <DemoList title={listTitle} items={[5, 3, 1, 10, 9]} />
       <Button onClick={changeTitleHandler}>Change List Title</Button>
     </div>

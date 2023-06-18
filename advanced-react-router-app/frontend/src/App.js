@@ -4,7 +4,7 @@ import EditEventPage from './pages/EditEvent';
 import ErrorPage from './pages/Error';
 import EventDetailPage, {
   loader as eventDetailLoader,
-  action as deleteEventAction
+  action as deleteEventAction,
 } from './pages/EventDetail';
 import EventsPage, { loader as eventsLoader } from './pages/Events';
 import EventsRootLayout from './pages/EventsRoot';
@@ -14,7 +14,7 @@ import RootLayout from './pages/Root';
 import { action as manipulateEventAction } from './components/EventForm';
 import NewsletterPage, { action as newsletterAction } from './pages/Newsletter';
 import AuthenticationPage, {
-  action as authAction
+  action as authAction,
 } from './pages/Authentication';
 import { action as logoutAction } from './pages/Logout';
 import { checkAuthLoader, tokenLoader } from './util/auth';
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <EventsPage />,
-            loader: eventsLoader
+            loader: eventsLoader,
           },
           {
             path: ':eventId',
@@ -45,40 +45,40 @@ const router = createBrowserRouter([
               {
                 index: true,
                 element: <EventDetailPage />,
-                action: deleteEventAction
+                action: deleteEventAction,
               },
               {
                 path: 'edit',
                 element: <EditEventPage />,
                 action: manipulateEventAction,
-                loader: checkAuthLoader
-              }
-            ]
+                loader: checkAuthLoader,
+              },
+            ],
           },
           {
             path: 'new',
             element: <NewEventPage />,
             action: manipulateEventAction,
-            loader: checkAuthLoader
-          }
-        ]
+            loader: checkAuthLoader,
+          },
+        ],
       },
       {
         path: 'auth',
         element: <AuthenticationPage />,
-        action: authAction
+        action: authAction,
       },
       {
         path: 'newsletter',
         element: <NewsletterPage />,
-        action: newsletterAction
+        action: newsletterAction,
       },
       {
         path: 'logout',
-        action: logoutAction
-      }
-    ]
-  }
+        action: logoutAction,
+      },
+    ],
+  },
 ]);
 
 function App() {

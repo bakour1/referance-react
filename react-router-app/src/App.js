@@ -1,7 +1,7 @@
 import {
   createBrowserRouter,
   // createRoutesFromElements,
-  RouterProvider
+  RouterProvider,
   // Route,
 } from 'react-router-dom';
 
@@ -26,9 +26,9 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> }, // path: ''
       { path: 'products', element: <ProductsPage /> },
-      { path: 'products/:productId', element: <ProductDetailPage /> }
-    ]
-  }
+      { path: 'products/:productId', element: <ProductDetailPage /> },
+    ],
+  },
 ]);
 
 // const router = createBrowserRouter(routeDefinitions);

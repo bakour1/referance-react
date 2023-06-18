@@ -20,7 +20,7 @@ const ProductItem = (props) => {
       updatedItem.quantity++;
       updatedItem.totalPrice = updatedItem.totalPrice + price;
       const existingItemIndex = updatedItems.findIndex(
-        (item) => item.id === id
+        (item) => item.id === id,
       );
       updatedItems[existingItemIndex] = updatedItem;
     } else {
@@ -29,13 +29,13 @@ const ProductItem = (props) => {
         price: price,
         quantity: 1,
         totalPrice: price,
-        name: title
+        name: title,
       });
     }
 
     const newCart = {
       totalQuantity: newTotalQuantity,
-      items: updatedItems
+      items: updatedItems,
     };
 
     dispatch(cartActions.replaceCart(newCart));

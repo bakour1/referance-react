@@ -2,7 +2,7 @@ import { useReducer } from 'react';
 
 const initialInputState = {
   value: '',
-  isTouched: false
+  isTouched: false,
 };
 
 const inputStateReducer = (state, action) => {
@@ -21,7 +21,7 @@ const inputStateReducer = (state, action) => {
 const useInput = (validateValue) => {
   const [inputState, dispatch] = useReducer(
     inputStateReducer,
-    initialInputState
+    initialInputState,
   );
 
   const valueIsValid = validateValue(inputState.value);
@@ -45,7 +45,7 @@ const useInput = (validateValue) => {
     hasError,
     valueChangeHandler,
     inputBlurHandler,
-    reset
+    reset,
   };
 };
 

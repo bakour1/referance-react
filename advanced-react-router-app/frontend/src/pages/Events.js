@@ -28,8 +28,8 @@ async function loadEvents() {
     throw json(
       { message: 'Could not fetch events.' },
       {
-        status: 500
-      }
+        status: 500,
+      },
     );
   } else {
     const resData = await response.json();
@@ -39,6 +39,6 @@ async function loadEvents() {
 
 export function loader() {
   return defer({
-    events: loadEvents()
+    events: loadEvents(),
   });
 }

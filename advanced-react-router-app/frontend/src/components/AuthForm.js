@@ -3,7 +3,7 @@ import {
   Link,
   useSearchParams,
   useActionData,
-  useNavigation,
+  useNavigation
 } from 'react-router-dom';
 
 import classes from './AuthForm.module.css';

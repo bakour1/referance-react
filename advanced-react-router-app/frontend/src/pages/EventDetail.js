@@ -4,7 +4,7 @@ import {
   json,
   redirect,
   defer,
-  Await
+  Await,
 } from 'react-router-dom';
 
 import EventItem from '../components/EventItem';
@@ -39,8 +39,8 @@ async function loadEvent(id) {
     throw json(
       { message: 'Could not fetch details for selected event.' },
       {
-        status: 500
-      }
+        status: 500,
+      },
     );
   } else {
     const resData = await response.json();
@@ -59,8 +59,8 @@ async function loadEvents() {
     throw json(
       { message: 'Could not fetch events.' },
       {
-        status: 500
-      }
+        status: 500,
+      },
     );
   } else {
     const resData = await response.json();
@@ -73,7 +73,7 @@ export async function loader({ request, params }) {
 
   return defer({
     event: await loadEvent(id),
-    events: loadEvents()
+    events: loadEvents(),
   });
 }
 
@@ -84,16 +84,16 @@ export async function action({ params, request }) {
   const response = await fetch('http://localhost:8080/events/' + eventId, {
     method: request.method,
     headers: {
-      Authorization: 'Bearer ' + token
-    }
+      Authorization: 'Bearer ' + token,
+    },
   });
 
   if (!response.ok) {
     throw json(
       { message: 'Could not delete event.' },
       {
-        status: 500
-      }
+        status: 500,
+      },
     );
   }
   return redirect('/events');
